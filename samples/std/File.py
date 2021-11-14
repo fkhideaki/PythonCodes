@@ -1,7 +1,8 @@
 import os
 
 def printFilesInDir(dirpath):
-    for f in os.listdir(dirpath):
+    files = os.listdir(dirpath)
+    for f in files:
         fp = os.path.join(dirpath, f)
         print(fp)
 
