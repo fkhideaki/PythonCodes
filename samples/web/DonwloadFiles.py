@@ -12,12 +12,15 @@ def downloadFileA(url):
 	fn = getFN(url)
 	downloadFile(url, fn)
 
+def indexToStr(idx, len):
+	return ('0' * len + str(idx))[-len:]
+
 def downloadIntAry(urlBase, i0, i1, il):
 	for i in range(i0, i1 + 1):
 		if il == 0:
 			s = str(i)
 		else:
-			s = ('0' * il + str(i))[-il:]
+			s = indexToStr(i, il)
 		url = urlBase.replace('##IDX##', s)
 		print(url)
 		downloadFileA(url)
