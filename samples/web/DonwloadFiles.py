@@ -1,7 +1,9 @@
 import requests
 
 def getFN(url):
-	return url.split('/')[-1]
+	fnb = url.split('/')[-1]
+	fnb = fnb.split('?')[0]
+	return fnb
 
 def downloadFile(url, fn):
 	urlData = requests.get(url).content
