@@ -1,4 +1,6 @@
+from urllib import request
 import requests
+import traceback
 
 def getFN(url):
 	fnb = url.split('/')[-1]
@@ -26,5 +28,13 @@ def downloadIntAry(urlBase, i0, i1, il):
 		url = urlBase.replace('##IDX##', s)
 		print(url)
 		downloadFileA(url)
+
+def downloadStr(url):
+	try:
+		u = request.urlopen(url)
+		return u.read()
+	except Exception as err:
+		print(err)
+		return None
 
 #downloadIntAry('https://aaa.bbb.ccc/##IDX##.jpg', 59, 92, 2)
