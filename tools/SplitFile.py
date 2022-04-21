@@ -1,23 +1,19 @@
 import sys
 
-def getFNSub(fnBase, suf):
-	vs = fnBase.split('.')
-	r = ''
-	for s in vs:
-		if s is vs[-1]:
-			r += '_' + suf
-		if not s is vs[0]:
-			r += '.'
-		r += s
-	return r
+def getFNSub(fnBase, suffix):
+	i = fnBase.rfind('.')
+	if i != -1:
+		return fnBase[0:i] + '_' + suffix + fnBase[i:]
+	else:
+		return fnBase + '_' + suffix
 
 def mainproc(file):
-	with open(s) as f:
+	with open(file) as f:
 		v = f.read().splitlines()
 		n = len(v)
 		hn = n // 2 + n % 2
-		fna = getFNSub(s, 'A')
-		fnb = getFNSub(s, 'B')
+		fna = getFNSub(file, 'A')
+		fnb = getFNSub(file, 'B')
 		with open(fna, mode='w') as fo:
 			for i in range(0, hn):
 				fo.write(v[i] + '\n')
