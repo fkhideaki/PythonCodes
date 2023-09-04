@@ -1,4 +1,5 @@
 import psutil
+import subprocess
 
 def getExePath(proc):
 	try:
@@ -15,4 +16,5 @@ def printProcList():
 			continue
 		print(str(proc.pid) + ' : ' + path)
 
-printProcList()
+def openDirExplorer(dir):
+	subprocess.Popen(['explorer', dir], shell=True)
