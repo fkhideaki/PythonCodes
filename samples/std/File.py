@@ -1,6 +1,32 @@
 import os
 import glob
 
+def moveFile(src, dst):
+    os.rename(src, dst)
+
+def copyFile(src, dst):
+    shutil.copy2(src, dst)
+
+def isFileExists(fp):
+    return os.path.isfile(fp)
+
+def isDirExists(fp):
+    return os.path.isdir(fp)
+
+def isPathExists(fp):
+    return os.path.exists(fp)
+
+# recursive
+def makeDir(fp):
+    os.makedirs(fp)
+
+def delFile(fp):
+    os.remove(fp)
+
+#recursive
+def delDir(fp):
+    shutil.rmtree(fp)
+
 def printFilesInDir(dirpath):
     files = os.listdir(dirpath)
     for f in files:
