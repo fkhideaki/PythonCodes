@@ -28,6 +28,12 @@ def delFile(fp):
 def delDir(fp):
     shutil.rmtree(fp)
 
+#recursive
+def copyDir(src, dst):
+    if os.path.isdir(dst):
+        shutil.rmtree(dst)
+    shutil.copytree(src, dst)
+
 def printFilesInDir(dirpath):
     files = os.listdir(dirpath)
     for f in files:
