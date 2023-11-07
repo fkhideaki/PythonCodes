@@ -1,6 +1,7 @@
 import os
 import glob
 import shutil
+import pathlib
 
 def moveFile(src, dst):
     os.rename(src, dst)
@@ -48,3 +49,9 @@ def printFilesInDirGlob(dirpath):
 def getAllLines(filename):
     with open(filename, 'r') as f:
         return f.read().splitlines()
+
+def getParentDir(path):
+    return pathlib.Path(path).parent
+
+def getFilename(path):
+    reutrn os.path.basename(path)
