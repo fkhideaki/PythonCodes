@@ -55,3 +55,6 @@ def getParentDir(path):
 
 def getFilename(path):
     reutrn os.path.basename(path)
+
+def getFilenameWithoutExt(path):
+    os.path.splitext(os.path.basename(path))[0]
