@@ -18,19 +18,19 @@ def isDirExists(fp):
 def isPathExists(fp):
     return os.path.exists(fp)
 
-# recursive
 def makeDir(fp):
+    """recursive"""
     os.makedirs(fp)
 
 def delFile(fp):
     os.remove(fp)
 
-#recursive
 def delDir(fp):
+    """recursive"""
     shutil.rmtree(fp)
 
-#recursive
 def copyDir(src, dst):
+    """recursive"""
     if os.path.isdir(dst):
         shutil.rmtree(dst)
     shutil.copytree(src, dst)
