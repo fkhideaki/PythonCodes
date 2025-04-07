@@ -1,7 +1,7 @@
 import os
 
 def indexToStr(idx, len):
-	return ('0' * len + str(idx))[-len:]
+    return ('0' * len + str(idx))[-len:]
 
 def dirp(obj):
     """非公開をメンバ一覧"""
