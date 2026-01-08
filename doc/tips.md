@@ -8,11 +8,14 @@
 - インストール済みパッケージ確認
   - pip freeze
 - パッケージ一括復元
-  - pip freeze > libs.txt
-  - pip install -r libs.txt
+  - pip freeze > requirements.txt
+  - pip install -r requirements.txt
 - パッケージ一括アンインストール
-  - pip freeze > libs.txt
-  - pip uninstall -y -r libs.txt
+  - pip freeze > requirements.txt
+  - pip uninstall -y -r requirements.txt
+- 依存パッケージをスキャンする
+  - pipreqs --encoding UTF8 .
+    - ※完全にはスキャンされない
 
 ## Python Launcher
 - インストールされているpython一覧を確認する
