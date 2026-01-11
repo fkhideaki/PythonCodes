@@ -15,3 +15,26 @@ class Indent:
 
     def toStr(self):
         return self.indent_str * self.level
+
+
+def printDir(
+    obj,
+    printValue=False,
+    printDef=False,
+    printPydoc=False,
+    printFunctionArgs=False):
+    for s in dir(obj):
+        if s.startswith('__'):
+            continue
+        attr = getattr(obj, s)
+        print(s + ' :')
+        if printValue:
+            print(f'  Val : {repr(attr)}')
+        if printDef:
+            print(f'  Def : {repr(type(attr))}')
+        if printPydoc and attr.__doc__:
+            print("  Doc: " + attr.__doc__.strip().replace('\n', '\n         '))
+        if printFunctionArgs and callable(attr):
+            import inspect
+            sig = str(inspect.signature(attr))
+            print("  Args: " + sig)
