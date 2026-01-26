@@ -1,18 +1,17 @@
+from dataclasses import dataclass
 import sys
 
 from .Utils import Indent
 
+@dataclass
 class ArgVal:
     cmd: str
     arg: str
 
-    def __init__(self, cmd: str, arg: str):
-        self.cmd = cmd
-        self.arg = arg
-
 class Args:
-    opt: list[ArgVal]
-    std: list[str]
+    def __init__(self):
+        self.opt: list[ArgVal] = []
+        self.std: list[str] = []
 
     @classmethod
     def getStd(cls):
