@@ -29,7 +29,7 @@ def getClipboardFiles():
     if files:
         v = []
         for s in files:
-            if s[0] == '"' and s[-1] == '"':
+            if len(s) > 2 and s[0] == '"' and s[-1] == '"':
                 s = s[1:-1]
             v.append(s)
         return v
