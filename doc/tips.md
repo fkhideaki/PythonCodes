@@ -3,6 +3,8 @@
   - python -m venv .venv
 - 仮想環境への切り替え
   - .venv\Scripts\activate.bat
+- 仮想環境終了
+  - deactivate
 
 ## パッケージ
 - インストール済みパッケージ確認
@@ -15,7 +17,10 @@
   - pip uninstall -y -r requirements.txt
 - 依存パッケージをスキャンする
   - pipreqs --encoding UTF8 .
-    - ※完全にはスキャンされない
+  - pipreqsの特定のバージョンでは
+    pipreqs.pipreqs --encoding UTF8 .
+    とする。
+  - ※完全にはスキャンされない
 
 ## Python Launcher
 - インストールされているpython一覧を確認する
