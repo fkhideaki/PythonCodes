@@ -2,7 +2,10 @@
 - 作成
   - python -m venv .venv
 - 仮想環境への切り替え
-  - .venv\Scripts\activate.bat
+  - windows
+    - .venv\Scripts\activate.bat
+  - linux
+    - source .venv/bin/activate
 - 仮想環境終了
   - deactivate
 
