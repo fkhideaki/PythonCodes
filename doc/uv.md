@@ -25,9 +25,9 @@ uv add requests
   - .venv\Scripts\python.exe 
 
 # チェックアウト操作
-git clone <URL>
-cd <プロジェクトフォルダ>
-uv sync
+- git clone <URL>
+- cd <プロジェクトフォルダ>
+- uv sync
 
 # 実行
 uv run main.py
