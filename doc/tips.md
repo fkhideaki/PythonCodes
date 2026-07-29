@@ -8,6 +8,12 @@
     - source .venv/bin/activate
 - 仮想環境終了
   - deactivate
+- VSCodeで
+  - コマンドから、Python: Select Interpreter で仮想環境を指定するか、下記を設定する
+{
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+    "python.analysis.diagnosticMode": "workspace"
+}
 
 ## パッケージ
 - インストール済みパッケージ確認
